@@ -58,7 +58,6 @@ class Board(object):
 
     def reveal_cell(self, x, y):
         if x < 0 or x >= self.width or y < 0 or y >= self.height:
-            print("Invalid coordinate")
             return
 
         elif self.grid[y][x].is_visible or self.grid[y][x].is_flag:
@@ -68,8 +67,6 @@ class Board(object):
 
         if self.grid[y][x].is_mine:
             self.game_over = True
-            #self.print_board()
-            #print("Game Over")
             return
 
         if self.grid[y][x].neighbor_mines > 0:
